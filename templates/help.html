@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title> RE Database Help </title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/help.css') }}">
+</head>
+<body>	
+	<div class='content'>
+		<h1> Welcome to the Restriction Enzyme Database Help Page! </h1>
+		<div class='text'>
+			<p> This database contains data on 5,928 different restriction enzymes. This data 
+			has been collected from the website <a href='http://rebase.neb.com/rebase/rebase.f9.html'>
+			Rebase</a>. There are eight different search criteria that can be searched. They are: </p>
+			<ul>
+				<li> Enzyme name </li>
+				<li> Prototype </li> 
+				<li> Microorganism </li>
+				<li> Source of microorganism </li>
+				<li> Recognition sequence with cleavage site </li>
+				<li> Methylation site and type </li>
+				<li> Commercial source </li>
+				<li> Reference number </li>
+			</ul>
+			<p> <span id='enzyme_name'> Enzyme name</span>: Restriction enzyme name. 
+			Searching via this option will return all available data on the enzyme searched. </p>
+			<p> <span>Prototype</span>: The name of the first enzyme discovered with this 
+			specificity. Searching via this option will return all enzyme names that the search 
+			query is a prototype of. </p>
+			<p> <span>Microorganism</span>: Organism from which this enzyme had been isolated. 
+			Searching via this option will generate all enzymes that have been isolated from this 
+			organism. Each enzyme will be displayed next to the microorganism to reflect the 
+			various strains of each species. </p>
+			<p> <span> Source of microorganism</span>: Either an individual or a National Culture 
+			Collection. Searching via this option will return all enzymes isolated by that individual 
+			or National Culture Collection. </p>
+			<p> <span> Recognition sequence with cleavage site</span>: DNA sequence that the enzyme 
+			uses to determine where to cut. The ^ denotes the precise location of the cut. Searching 
+			this option will match to all enzymes that have this cut sequence. REBASE Recognition 
+			sequences representations use the standard abbreviations (Eur. J. Biochem. 150: 1-5, 1985) 
+			to represent ambiguity.
+				<ul>
+					<li> R = G or A </li>
+					<li> Y = C or T </li>
+					<li> M = A or C </li>
+					<li> K = G or T </li>
+					<li> S = G or C </li>
+					<li> W = A or T </li>
+					<li> B = not A (C or G or T) </li>
+					<li> D = not C (A or G or T) </li>
+					<li> H = not G (A or C or T) </li>
+					<li> V = not T (A or C or G) </li>
+					<li> N = A or C or G or T </li>
+				</ul>
+			</p>
+			<p> <span> Methylation site and type</span>: The site of methylation by the cognate methylase 
+			when known is indicated X(Y) or X,X2(Y,Y2), where X is the base within the recognition 
+			sequence that is modified.  A negative number indicates the complementary strand, numbered 
+			from the 5' base  of that strand, and Y is the specific type of methylation involved:
+				<ul>
+					<li> (6) = N6-methyladenosine </li>
+					<li> (5) = 5-methylcytosine </li>
+					<li> (4) = N4-methylcytosine </li>
+				</ul>
+			If the methylation information is different for the 3' strand, X2 and Y2 are given as well.
+			Searching via this option will produce all enzymes with this methylation site and type.
+			</p>
+			<p> <span> Commercial source</span>: Commercial vendors who provide the isolated enzyme for
+			use in experiments. Searching via this option will produce all enzymes available from this
+			vendor. The vendors are searched by single letter codes, as that is how they are listed for each
+			enzyme in the database. A chart of the  vendor one letter codes corresponding to their full 
+			name is available by hovering over the relevant text on the search page. </p>
+			<p> <span> Reference numbers</span>: The primary reference numbers for the isolation and/or 
+			purification of the restriction enzyme or methylase, the determination of the recognition
+			sequence and cleavage site or the methylation specificity. Searching a number will pull the
+			matched full reference. These numbers can be obtained by first searching by enzyme name. 
+			This will list all reference numbers associated with that enzyme, which can then be used to
+			search for the full reference. </p>	
+		</div>
+		<p id='link_back'><a href="{{ url_for('re_search') }}">Back to search form</a></p>
+	</div>
+</body>
+</html

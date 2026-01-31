@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+   <title> Restriction Enzyme Search Form </title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/re_search.css') }}">
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+   <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="//code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+	<script src="{{ url_for('static', filename='js/re_search.js') }}"></script>
+</head>
+<body id='main'>
+	<h1> Restriction Enzyme Database </h1>
+	<p id='help'>Please see the <a href="{{ url_for('help') }}">help</a> page to learn how to search this database.</p>
+	<p id='pop_up_line'>Click <a href='#' id='open_pop_up'>here</a> to display commercial source search options.</p>
+	<div id='pop_up'>
+		<h4 id="pop_up_title"> Code: Full name </h4>
+		<ul>
+			<li> B: Thermo Fisher Scientific </li>
+			<li> C: Minotech Biotechnology </li>
+			<li> E: Agilent Technologies </li>
+			<li> I: SibEnzyme Ltd. </li>
+			<li> J: Nippon Gene Co. Ltd. </li>
+			<li> K: Takara Bio Inc. </li>
+			<li> M: Roche Applied Science </li>
+			<li> N: New England Biolabs </li>
+			<li> O: Toyobo Biochemicals </li>
+			<li> Q: Molecular Biology Resources - CHIMERx </li>
+			<li> R: Promega Corporation </li>
+			<li> S: Sigma Chemical Corporation </li>
+			<li> V: Vivantis Technologies </li>
+			<li> X: EURx Ltd. </li>
+			<li> Y: SinaClon BioScience Co. </li>
+		</ul>
+		<button id='close_pop_up'>Close</button>
+	</div>
+	<form name='search_re' id='search_re' action='{{ url_for('process_form') }}'>
+		<input name='query' id='query' type='search' autofocus='autofocus' placeholder=''/>
+		<select name="search_types" id="search_types" required>
+			<option value="null" disabled selected>Choose a search type</option>
+  			<option value="enzyme_name">Enzyme name</option>
+  			<option value="prototype">Prototype</option>
+ 			<option value="microorganism">Microorganism</option>
+			<option value="source_of_microorganism">Source of microorganism</option>
+ 			<option value="recognition_sequence">Recognition sequence with cleavage site</option>
+ 			<option value="meth_site_type">Methylation site and type</option>
+ 			<option value="commercial_source">Commercial source</option>
+  			<option value="reference_number">Reference number</option>
+		</select>
+		<input name="submit" type="submit" id="submit" value="Submit">
+	</form>
+	<section id='search_results'>
+		<p id='match_count'>Your search returned <span id='num_matches'>0</span> match(es).</p>
+		<p id='no_matches'>Sorry, your search won't cut it. :) Please try again.</p>
+		<table class='results'>
+			<tbody>
+				<!-- Javascript will fill this part in -->
+			</tbody>
+	</section>
+</body>
+</html>

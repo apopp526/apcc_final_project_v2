@@ -1,0 +1,31 @@
+
+body {
+        font: small 'Lucida Grande', Verdana, Arial, sans-serif;
+        background-color: #58ae5c;
+}
+
+div.content {
+   	margin-left: auto;
+        margin-right: auto;    
+        width: 1200px;
+        padding: 1px;
+}
+
+h1 {
+	text-align: center;
+}
+
+p#link_back {
+	text-align: center;
+}
+
+div.text {
+	margin-left: auto;
+        margin-right: auto;
+        width: 800px;
+        padding: 1px;
+}
+
+span {
+	font-weight: bold;
+}
