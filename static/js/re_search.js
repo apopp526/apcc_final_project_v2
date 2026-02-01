@@ -44,38 +44,22 @@ function processJSON( data ) {
 				$('<td/>', { 'text' : 'Commercial source' } ).appendTo('#header');
 				$('<td/>', { 'text' : 'Reference numbers' } ).appendTo('#header');
 
-		} else if ( $('#search_types').val() == 'prototype' ) {
-			$('<tr/>', { 'id' : 'header' } ).appendTo('tbody');
-				$('<td/>', { 'text' : 'Enzyme name' } ).appendTo('#header');
-
 		} else if ( $('#search_types').val() == 'microorganism' ) {
          $('<tr/>', { 'id' : 'header' } ).appendTo('tbody');
 				$('<td/>', { 'text' : 'Enzyme name' } ).appendTo('#header');
 				$('<td/>', { 'text' : 'Microorganism' } ).appendTo('#header');
-	
-		} else if ( $('#search_types').val() == 'source_of_microorganism' ) {
-         $('<tr/>', { 'id' : 'header' } ).appendTo('tbody');
-            $('<td/>', { 'text' : 'Enzyme name' } ).appendTo('#header');
-
-		} else if ( $('#search_types').val() == 'recognition_sequence' ) {
-			$('<tr/>', { 'id' : 'header' } ).appendTo('tbody');
-				$('<td/>', { 'text' : 'Enzyme name' } ).appendTo('#header');
-	
-		} else if ( $('#search_types').val() == 'meth_site_type' ) {
-			$('<tr/>', { 'id' : 'header' } ).appendTo('tbody');
-				$('<td/>', { 'text' : 'Enzyme name' } ).appendTo('#header');
-
-		} else if ( $('#search_types').val() == 'commercial_source' ) {
-			$('<tr/>', { 'id' : 'header' } ).appendTo('tbody');
-				$('<td/>', { 'text' : 'Enzyme name' } ).appendTo('#header');
 
 		} else if ( $('#search_types').val() == 'reference_number' ) {
 			$('<tr/>', { 'id' : 'header' } ).appendTo('tbody');
 				$('<td/>', { 'text' : 'Reference number' } ).appendTo('#header');
 				$('<td/>', { 'text' : 'Full reference' } ).appendTo('#header');
+
+		} else {
+			$('<tr/>', { 'id' : 'header' } ).appendTo('tbody');
+				$('<td/>', { 'text' : 'Enzyme name' } ).appendTo('#header');
 		}
 	}
-
+	
 	// This will be used to keep track of row identifiers
 	var next_row_num = 1;
 	   
@@ -97,29 +81,16 @@ function processJSON( data ) {
 			$('<td/>', { "text" : item.commercial_source } ).appendTo('#' + this_row_id);
 			$('<td/>', { "text" : item.reference_number } ).appendTo('#' + this_row_id);
 	
-		} else if ( $('#search_types').val() == 'prototype' ) {	
-			$('<td/>', { "text" : item.enzyme_name } ).appendTo('#' + this_row_id);
-	
 		} else if ( $('#search_types').val() == 'microorganism' ) {
 			$('<td/>', { "text" : item.enzyme_name } ).appendTo('#' + this_row_id);
  			$('<td/>', { "text" : item.microorganism } ).appendTo('#' + this_row_id);
-
-		} else if ( $('#search_types').val() == 'source_of_microorganism' ) {
-         $('<td/>', { "text" : item.enzyme_name } ).appendTo('#' + this_row_id);
-
-		} else if ( $('#search_types').val() == 'recognition_sequence' ) {
-			$('<td/>', { "text" : item.enzyme_name } ).appendTo('#' + this_row_id);
-	
-		} else if ( $('#search_types').val() == 'meth_site_type' ) {
-			$('<td/>', { "text" : item.enzyme_name } ).appendTo('#' + this_row_id);
-
-		} else if ( $('#search_types').val() == 'commercial_source' ) {
-			$('<td/>', { "text" : item.enzyme_name } ).appendTo('#' + this_row_id);
 
 		} else if ( $('#search_types').val() == 'reference_number' ) {
 			$('<td/>', { "text" : item.reference_number } ).appendTo('#' + this_row_id);
 			$('<td/>', { "text" : item.full_reference } ).appendTo('#' + this_row_id);
 
+		} else {	
+			$('<td/>', { "text" : item.enzyme_name } ).appendTo('#' + this_row_id);
 		}
 	});
     
