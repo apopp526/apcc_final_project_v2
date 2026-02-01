@@ -27,7 +27,7 @@ def process_form():
 		if type == 'enzyme_name':
 			qry = 'SELECT * FROM final_project_data WHERE enzyme_name LIKE (%s)'
 			curs.execute(qry, (query,))	
-			for (enzyme_name, prototype, microorganism, source_of_microorganism, recognition_sequence, meth_site_type, commercial_source, reference_number) in curs:
+			for (enzyme_name, prototype, microorganism, source_of_microorganism, recognition_sequence, meth_site_type, commercial_source, reference_number, id) in curs:
 				search_results['matches'].append({'enzyme_name': enzyme_name, 'prototype': prototype, \
 				'microorganism': microorganism, 'source_of_microorganism': source_of_microorganism, \
 				'recognition_sequence': recognition_sequence, 'meth_site_type': meth_site_type, \
