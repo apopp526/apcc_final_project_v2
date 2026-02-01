@@ -21,7 +21,7 @@ def main():
     recognition_sequences = []
     commercial_sources = []
     references = []
-    for line in open('RE data from rebase.txt'):
+    for line in open('Data/RE data from rebase.txt'):
         line = line.rstrip()
         if line.startswith('<1>'):
             num_enzymes += 1
@@ -82,13 +82,11 @@ def main():
                 # print(reference.group())
 
     full_references = []
-    for line in open('RE references.txt'):
+    for line in open('Data/RE references.txt'):
         line = line.rstrip()
         full_reference = re.search(r'(?<=[0-9].\s).+', line)
         full_references.append(full_reference.group())
         #print(full_reference.group())
-    for i in range(1, 4167):
-        print(i)
 
 
 if __name__ == '__main__':
